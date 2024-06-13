@@ -2,13 +2,13 @@
 #pragma once
 
 #include <algorithm>
+#include <mutex>
 #include <random>
 #include <set>
 #include <thread>
 #include <unordered_map>
 #include <utility>
 #include <vector>
-#include <mutex>
 
 #include "core/task/include/task.hpp"
 
@@ -44,4 +44,4 @@ class ImageMarkingSTL : public ppc::core::Task {
   void resolve_labels(std::vector<int>& labels);
 };
 
-}  // namespace SalaevTBB
+}  // namespace SalaevSTL
