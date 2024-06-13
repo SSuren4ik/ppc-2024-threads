@@ -5,7 +5,7 @@
 
 using namespace SalaevSTL;
 
-TEST(salaev_v_components_marking_tbb_functional, correct_input_data) {
+TEST(salaev_v_components_marking_stl_functional, correct_input_data) {
   // Create data
   uint32_t height = 5;
   uint32_t width = 5;
@@ -47,7 +47,7 @@ TEST(salaev_v_components_marking_tbb_functional, correct_input_data) {
   ASSERT_EQ(testTaskParallel.validation(), true);
 }
 
-TEST(salaev_v_components_marking_tbb_functional, correct_pre_processing) {
+TEST(salaev_v_components_marking_stl_functional, correct_pre_processing) {
   // Create data
   uint32_t height = 5;
   uint32_t width = 5;
@@ -91,7 +91,7 @@ TEST(salaev_v_components_marking_tbb_functional, correct_pre_processing) {
   ASSERT_EQ(testTaskParallel.pre_processing(), true);
 }
 
-TEST(salaev_v_components_marking_tbb_functional, correct_run) {
+TEST(salaev_v_components_marking_stl_functional, correct_run) {
   // Create data
   uint32_t height = 5;
   uint32_t width = 5;
@@ -137,7 +137,7 @@ TEST(salaev_v_components_marking_tbb_functional, correct_run) {
   ASSERT_EQ(testTaskParallel.run(), true);
 }
 
-TEST(salaev_v_components_marking_tbb_functional, correct_rectangle) {
+TEST(salaev_v_components_marking_stl_functional, correct_rectangle) {
   // Create data
   uint32_t height = 5;
   uint32_t width = 6;
@@ -191,7 +191,7 @@ TEST(salaev_v_components_marking_tbb_functional, correct_rectangle) {
   ASSERT_EQ(output2, expected2);
 }
 
-TEST(salaev_v_components_marking_tbb_functional, test_functional) {
+TEST(salaev_v_components_marking_stl_functional, test_functional) {
   // Create data
   uint32_t height = 5;
   uint32_t width = 5;
