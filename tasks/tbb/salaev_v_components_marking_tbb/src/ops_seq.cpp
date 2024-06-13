@@ -127,6 +127,7 @@ bool ImageMarkingTBB::pre_processing() {
 
 bool ImageMarkingTBB::run() {
   internal_order_test();
+  tbb::spin_mutex mutex;
   int nextLabel = 1;
   std::vector<int> labels(height * width, -1);
   std::vector<std::set<int>> equivalence(height * width);
@@ -140,7 +141,7 @@ bool ImageMarkingTBB::run() {
         if (j > 0 && labels[i * width + (j - 1)] != -1) neighboringLabels.insert(labels[i * width + (j - 1)]);
 
         if (neighboringLabels.empty()) {
-          tbb::spin_mutex::scoped_lock lock;
+          tbb::spin_mutex::scoped_lock lock(mutex);
           labels[i * width + j] = nextLabel;
           equivalence[nextLabel].insert(nextLabel);
           ++nextLabel;
@@ -148,7 +149,7 @@ bool ImageMarkingTBB::run() {
           int smallestLabel = *neighboringLabels.begin();
           labels[i * width + j] = smallestLabel;
           for (auto label : neighboringLabels) {
-            tbb::spin_mutex::scoped_lock lock;
+            tbb::spin_mutex::scoped_lock lock(mutex);
             equivalence[label].insert(smallestLabel);
             equivalence[smallestLabel].insert(label);
           }
