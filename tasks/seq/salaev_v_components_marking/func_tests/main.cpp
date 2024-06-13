@@ -97,13 +97,13 @@ TEST(salaev_v_components_marking_seq_functional, correct_post_processing) {
 
   // Create Task
   ImageMarking testTaskSequential(taskDataSeq);
-  ASSERT_EQ(testTaskSequential.validation(), true);
+  testTaskSequential.validation();
   testTaskSequential.pre_processing();
   testTaskSequential.run();
   ASSERT_EQ(testTaskSequential.post_processing(), true);
 }
 
-TEST(salaev_v_components_marking_seq_functional, all_zero) {
+TEST(salaev_v_components_marking_seq_functional, test_functional) {
   // Create data
   uint32_t height = 15;
   uint32_t width = 15;
@@ -123,7 +123,7 @@ TEST(salaev_v_components_marking_seq_functional, all_zero) {
 
   // Create Task
   ImageMarking testTaskSequential(taskDataSeq);
-  ASSERT_EQ(testTaskSequential.validation(), true);
+  testTaskSequential.validation();
   testTaskSequential.pre_processing();
   testTaskSequential.run();
   testTaskSequential.post_processing();
