@@ -61,10 +61,10 @@ TEST(salaev_v_components_marking_seq_functional, rectangle) {
   uint32_t width = 8;
   std::vector<uint32_t> dimensions = {height, width};
   std::vector<uint8_t> in = {0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0,
-                            0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1};
+                             0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1};
   std::vector<uint32_t> output(height * width, 0);
   std::vector<uint32_t> expected = {1, 1, 0, 0, 2, 2, 2, 0, 0, 0, 3, 0, 0, 0, 0, 3,
-                                   1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 4, 0, 0};
+                                    1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 4, 0, 0};
 
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
