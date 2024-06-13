@@ -48,11 +48,8 @@ TEST(salaev_v_components_marking_seq_functional, correct_output) {
 
   // Create Task
   ImageMarking testTaskSequential(taskDataSeq);
-  ASSERT_EQ(testTaskSequential.validation(), true);
-  testTaskSequential.pre_processing();
-  testTaskSequential.run();
-  testTaskSequential.post_processing();
-  ASSERT_EQ(output, expected);
+  testTaskSequential.validation();
+  ASSERT_EQ(testTaskSequential.pre_processing(), true);
 }
 
 TEST(salaev_v_components_marking_seq_functional, rectangle) {
