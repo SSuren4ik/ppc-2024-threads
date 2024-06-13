@@ -8,8 +8,7 @@ bool ImageMarking::validation() {
   internal_order_test();
   height = reinterpret_cast<uint32_t*>(taskData->inputs[0])[0];
   width = reinterpret_cast<uint32_t*>(taskData->inputs[0])[1];
-  return (height * width == taskData->inputs_count[1] &&
-          taskData->inputs_count[1] == taskData->outputs_count[0]);
+  return (height * width == taskData->inputs_count[1] && taskData->inputs_count[1] == taskData->outputs_count[0]);
 }
 
 bool ImageMarking::pre_processing() {

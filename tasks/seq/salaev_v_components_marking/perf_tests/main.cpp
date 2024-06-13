@@ -8,7 +8,7 @@
 
 using namespace SalaevSeq;
 
-TEST(kruglov_a_components_marking_seq_perf_test, test_pipeline_run) {
+TEST(salaev_v_components_marking_seq_perf, test_pipeline_run) {
   // Create data
 
   uint32_t height = 2000;
@@ -50,7 +50,7 @@ TEST(kruglov_a_components_marking_seq_perf_test, test_pipeline_run) {
   ASSERT_EQ(out, comp);
 }
 
-TEST(kruglov_a_components_marking_seq_perf_test, test_task_run) {
+TEST(salaev_v_components_marking_seq_perf, test_task_run) {
   // Create data
 
   uint32_t height = 2000;
